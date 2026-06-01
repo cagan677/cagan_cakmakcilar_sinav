@@ -1,0 +1,75 @@
+﻿@model List<AdSoyad_Sinav.Models.Etkinlik>
+@{ Layout = null; }
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title>Kampüs Etkinlikleri</title>
+    <style>
+        body { font-family: sans-serif; background: #f4f4f4; padding: 20px; display: flex; gap: 20px; }
+        .panel { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .sol { flex: 1; border-top: 5px solid #3498db; height: fit-content; }
+        .sag { flex: 2; border-top: 5px solid #2ecc71; }
+        input { width: 100%; padding: 10px; margin-bottom: 10px; box-sizing: border-box;}
+        button { width: 100%; padding: 10px; background: #3498db; color: white; border: none; cursor: pointer; margin-bottom: 10px; }
+        .kart { border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; border-radius: 5px; position: relative; }
+        
+        /* GÖREV 1: İptal Butonunun Kırmızı Rengi */
+        .btn-sil { background: #e74c3c; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px; margin-top: 10px; width: auto; }
+        
+        /* GÖREV 3: Gizleme Butonunun Gri Rengi */
+        .btn-gizle { background: #7f8c8d; color: white; }
+    </style>
+</head>
+<body>
+    <div class="panel sol">
+        <h3>Yeni Etkinlik</h3>
+        <form asp-action="Ekle" method="post">
+            <input type="text" name="Ad" placeholder="Etkinlik Adı" required>
+            <span style="color:red;" asp-validation-for="FirstOrDefault().Ad"></span>
+            
+            <input type="datetime-local" name="Tarih" required>
+            <input type="number" name="Kontenjan" placeholder="Kişi Kapasitesi" min="0" required>
+            
+            <button type="submit">Sisteme Ekle</button>
+        </form>
+
+        <button type="button" class="btn-gizle" id="btnGizle">Listeyi Gizle</button>
+    </div>
+
+    <div class="panel sag" id="etkinlikListesi">
+        <h3>Yaklaşan Etkinlikler (@Model.Count)</h3>
+        @foreach(var e in Model) {
+            <div class="kart">
+                <h4 style="margin: 0; color: #2c3e50;">@e.Ad</h4>
+                <p style="margin: 5px 0; color: #7f8c8d;">Tarih: @e.Tarih.ToString("dd.MM.yyyy HH:mm")</p>
+                
+                @if (e.Kontenjan == 0) {
+                    <p style="margin: 0; font-weight: bold; color: red;">KONTENJAN DOLDU</p>
+                } else {
+                    <p style="margin: 0; font-weight: bold;">Kontenjan: @e.Kontenjan Kişi</p>
+                }
+
+                <form asp-action="Sil" method="post" style="margin:0; padding:0;">
+                    <input type="hidden" name="id" value="@e.Id" />
+                    <button type="submit" class="btn-sil">İptal Et (Sil)</button>
+                </form>
+            </div>
+        }
+    </div>
+
+    <script>
+        document.getElementById("btnGizle").addEventListener("click", function() {
+            var sagPanel = document.getElementById("etkinlikListesi");
+            if (sagPanel.style.display === "none") {
+                sagPanel.style.display = "block";
+                this.innerText = "Listeyi Gizle";
+                this.style.background = "#7f8c8d";
+            } else {
+                sagPanel.style.display = "none";
+                this.innerText = "Listeyi Göster";
+                this.style.background = "#2ecc71";
+            }
+        });
+    </script>
+</body>
+</html>
