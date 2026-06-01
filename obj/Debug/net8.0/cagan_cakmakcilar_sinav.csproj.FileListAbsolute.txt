@@ -1,0 +1,9 @@
+C:\Users\ADMİN\Desktop\cagan_cakmakcilar_sinav\obj\Debug\net8.0\cagan_cakmakcilar_sinav.csproj.AssemblyReference.cache
+C:\Users\ADMİN\Desktop\cagan_cakmakcilar_sinav\obj\Debug\net8.0\cagan_cakmakcilar_sinav.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ADMİN\Desktop\cagan_cakmakcilar_sinav\obj\Debug\net8.0\cagan_cakmakcilar_sinav.AssemblyInfoInputs.cache
+C:\Users\ADMİN\Desktop\cagan_cakmakcilar_sinav\obj\Debug\net8.0\cagan_cakmakcilar_sinav.AssemblyInfo.cs
+C:\Users\ADMİN\Desktop\cagan_cakmakcilar_sinav\obj\Debug\net8.0\cagan_cakmakcilar_sinav.csproj.CoreCompileInputs.cache
+C:\Users\ADMİN\Desktop\cagan_cakmakcilar_sinav\obj\Debug\net8.0\cagan_cakmakcilar_sinav.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ADMİN\Desktop\cagan_cakmakcilar_sinav\obj\Debug\net8.0\cagan_cakmakcilar_sinav.RazorAssemblyInfo.cache
+C:\Users\ADMİN\Desktop\cagan_cakmakcilar_sinav\obj\Debug\net8.0\cagan_cakmakcilar_sinav.RazorAssemblyInfo.cs
+C:\Users\ADMİN\Desktop\cagan_cakmakcilar_sinav\obj\Debug\net8.0\cagan_cakmakcilar_sinav.sourcelink.json

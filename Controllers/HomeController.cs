@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using AdSoyad_Sinav.Models;
+using cagan_cakmakcilar_sinav.Models;
 
-namespace AdSoyad_Sinav.Controllers;
+namespace cagan_cakmakcilar_sinav.Controllers;
 
 public class HomeController : Controller
 {
@@ -9,8 +9,8 @@ public class HomeController : Controller
     public HomeController(KampusContext db) { _db = db; }
 
     [HttpGet]
-    [Route("")] // Varsayılan boş link için (localhost:5000)
-    [Route("Etkinlikler")] // GÖREV 4: Özel Rota Tanımlaması (localhost:5000/Etkinlikler)
+    [Route("")] 
+    [Route("Etkinlikler")] // GÖREV 4: Özel Rota
     public IActionResult Index() {
         return View(_db.Etkinlikler.OrderBy(e => e.Tarih).ToList());
     }
@@ -25,7 +25,7 @@ public class HomeController : Controller
         return View("Index", _db.Etkinlikler.ToList());
     }
 
-    // GÖREV 1: Veritabanından Veri Silme (CRUD) Metodu
+    // GÖREV 1: Silme İşlemi (CRUD) Metodu
     [HttpPost]
     public IActionResult Sil(int id) {
         var etkinlik = _db.Etkinlikler.Find(id);

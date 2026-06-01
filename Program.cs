@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using AdSoyad_Sinav;
+using cagan_cakmakcilar_sinav;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,7 +21,7 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthorization();
 
-// GÖREV 4 İÇİN KRİTİK: Controller üzerindeki [Route] etiketlerini aktif eder
+// GÖREV 4 Rotaları için aktiflik satırı
 app.MapControllers(); 
 
 app.MapControllerRoute(

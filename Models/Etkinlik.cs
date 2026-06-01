@@ -1,9 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AdSoyad_Sinav.Models
+namespace cagan_cakmakcilar_sinav.Models
 {
-    [Table("Sinav_Etkinlikler")] // Veritabanı çakışmasını engeller!
+    [Table("Sinav_Etkinlikler")]
     public class Etkinlik
     {
         [Key]
